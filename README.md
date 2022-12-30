@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=GitHub&logoColor=white"/>
 <img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=plastic&logo=Visual%20Studio%20Code&logoColor=white"/>
 
-## 2. 주요기능 (:white_check_mark: = 맡은 )
+## 2. 주요기능 (:white_check_mark: = 맡은역할 )
 * :white_large_square: 공지사항
 * :white_check_mark: QnA 게시판 
 * :white_large_square: JWT 로그인 
