@@ -13,9 +13,8 @@
 * :white_large_square: 공지사항
 * :white_check_mark: QnA 게시판 
 * :white_large_square: JWT 로그인 
-* :white_check_mark: 소셜 로그인
-* :white_check_mark: 부동산 정보 및 서비스
-* :white_check_mark: kakao Map 활용 
+* :white_check_mark: 소셜 로그인 (Kakao API 활용)
+* :white_check_mark: 부동산 정보 및 서비스 (공공 API활용,kakao Map 활용)
 
 ## 3. 설계
 * 아키텍처 <p>
@@ -26,30 +25,34 @@
 * Rest API <p>
   |Method|URL|설명 |
   |----|----|----|
-  |GET|/rest/house/interest||
-  |GET|/rest/house/search/housedeal/{aptCode}||
-  |POST|/rest/house/interest||
-  |POST|/rest/house/search/dongList||
-  |DELETE|/rest/house/interest/{aptCode}||
-  |GET|/rest/area||
-  |GET|/rest/area/{sidoName}||
-  |GET|/rest/area/{sidoName/{gugunName}}||
+  |부동산 API|
+  |GET|/rest/house/interest|로그인된 사용자가 선택한 관심지역 데이터 제공|
+  |GET|/rest/house/search/housedeal/{aptCode}|aptCode에 해당하는 아파트거래 정보 제공|
+  |POST|/rest/house/interest|로그인된 사용자의 관심지역 리스트에 관심지역을 추가|
+  |POST|/rest/house/search/dongList|요청한 동들의 모든 아파트 정보들을 제공|
+  |DELETE|/rest/house/interest/{aptCode}|로그인된 사용자의 관심지역 리스트에서 <p>aptCode에 해당하는 아파트를 제거|
+  |GET|/rest/area|검색하고자 하는 시 데이터 제공|
+  |GET|/rest/area/{sidoName}|sidoName에 속한 구군 데이터 제공|
+  |GET|/rest/area/{sidoName/{gugunName}}|sidoName과 gugunName에 속한 동 데이터 제공|
+  |공지사항 API|
   |GET|/rest/notice/article/{no}||
   |DELETE|/rest/notice/delete/{no}||
   |GET|/rest/notice/list||
   |PUT|/rest/notice/modify||
   |GET|/rest/notice/search/{title}||
   |POST|/rest/notice/write||
-  |GET|/rest/qna/answer/{questionno}||
-  |DELETE|/rest/qna/answer/delete/{answerno}||
-  |PUT|/rest/qna/answer/modify||
-  |POST|/rest/qna/answer/write||
-  |GET|/rest/qna/question||
-  |GET|/rest/qna/question/{no}||
-  |PUT|/rest/qna/question/complete/{questionno}||
-  |DELETE|/rest/qna/question/delete/{questionno}||
-  |PUT|/rest/qna/question/modify||
-  |POST|/rest/qna/question/write||
+  |QnA API|
+  |GET|/rest/qna/question|모든 질문데이터 리스트로 제공|
+  |GET|/rest/qna/question/{no}|no에 해당하는 질문글 데이터 제공|
+  |POST|/rest/qna/question/write|질문글 작성|
+  |PUT|/rest/qna/question/modify|질문글 수정|
+  |PUT|/rest/qna/question/complete/{questionno}|questionno에 해당하는 질문글의 답변완료 여부상태를 변경|
+  |DELETE|/rest/qna/question/delete/{questionno}|questionno에 해당하는 질문글을 삭제|
+  |GET|/rest/qna/answer/{questionno}|questionno에 해당하는 질문과 관련한 답변(댓글)들 제공|
+  |DELETE|/rest/qna/answer/delete/{answerno}|answerno에 해당하는 답변(댓글)을 제거|
+  |PUT|/rest/qna/answer/modify|QnA에 달린 답변(댓글)을 수정|
+  |POST|/rest/qna/answer/write|QnA에 답변(댓글)작성|
+  |로그인 API|
   |DELETE|/rest/user/delete/{memberid}||
   |POST|/rest/user/findpwd||
   |GET|/rest/user/info/{memberid}||
