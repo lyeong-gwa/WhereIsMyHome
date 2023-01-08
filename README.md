@@ -35,12 +35,12 @@
   |GET|/rest/area/{sidoName}|sidoName에 속한 구군 데이터 제공|
   |GET|/rest/area/{sidoName/{gugunName}}|sidoName과 gugunName에 속한 동 데이터 제공|
   |공지사항 API|
-  |GET|/rest/notice/article/{no}||
-  |DELETE|/rest/notice/delete/{no}||
-  |GET|/rest/notice/list||
-  |PUT|/rest/notice/modify||
-  |GET|/rest/notice/search/{title}||
-  |POST|/rest/notice/write||
+  |GET|/rest/notice/article/{no}|공지사항 식별값(no)에 해당하는 공지사항 정보 불러오기|
+  |DELETE|/rest/notice/delete/{no}|no에 해당하는 공지사항 제거|
+  |GET|/rest/notice/list|공지사항 리스트 불러오기|
+  |PUT|/rest/notice/modify|공지사항 글 수정|
+  |GET|/rest/notice/search/{title}|공지사항 제목 키워드를 사용해서 공지사항 정보 불러오기|
+  |POST|/rest/notice/write|공지사항 글 추가|
   |QnA API|
   |GET|/rest/qna/question|모든 질문데이터 리스트로 제공|
   |GET|/rest/qna/question/{no}|no에 해당하는 질문글 데이터 제공|
@@ -53,16 +53,16 @@
   |PUT|/rest/qna/answer/modify|QnA에 달린 답변(댓글)을 수정|
   |POST|/rest/qna/answer/write|QnA에 답변(댓글)작성|
   |로그인 API|
-  |DELETE|/rest/user/delete/{memberid}||
-  |POST|/rest/user/findpwd||
-  |GET|/rest/user/info/{memberid}||
-  |POST|/rest/user/join||
-  |POST|/rest/user/kakao||
-  |POST|/rest/user/login||
-  |GET|/rest/user/logout/{memberid}||
-  |PUT|/rest/user/modify||
-  |POST|/rest/user/refresh||
-  |PUT|/rest/user/updatepwd||
+  |GET|/rest/user/info/{memberid}|memberid에 해당하는 사용자의 정보를 제공|
+  |POST|/rest/user/findpwd|사용자 비밀번호 찾을 때 사용|
+  |POST|/rest/user/join|작성한 정보들을 받아 사용자 추가(회원가입)|
+  |POST|/rest/user/kakao|kakao 소셜 로그인할 때 요청|
+  |POST|/rest/user/login|로그인 확인|
+  |GET|/rest/user/logout/{memberid}|사용자 로그아웃|
+  |PUT|/rest/user/modify|사용자 정보 수정|
+  |POST|/rest/user/refresh|JWT refresh 요청|
+  |PUT|/rest/user/updatepwd|사용자 비밀번호 재설정에 사용|
+  |DELETE|/rest/user/delete/{memberid}|사용자 회원탈퇴|
   
 
 ## 4. 리뷰
